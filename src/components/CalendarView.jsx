@@ -23,7 +23,15 @@ const CalendarView = ({ entries, onClose }) => {
       const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
       const day = String(selectedDate.getDate()).padStart(2, '0');
       const dateStr = `${year}-${month}-${day}`;
-      filtered = filtered.filter((entry) => entry.date.startsWith(dateStr));
+      filtered = filtered.filter((entry) => {
+        // Ensure we're comparing the local date parts, not the full timestamp
+        const entryDate = new Date(entry.date);
+        const entryYear = entryDate.getFullYear();
+        const entryMonth = String(entryDate.getMonth() + 1).padStart(2, '0');
+        const entryDay = String(entryDate.getDate()).padStart(2, '0');
+        const entryDateStr = `${entryYear}-${entryMonth}-${entryDay}`;
+        return entryDateStr === dateStr;
+      });
     }
 
     return filtered;
@@ -86,14 +94,19 @@ const CalendarView = ({ entries, onClose }) => {
     );
   };
 
-  // Create a date-to-mood mapping using local dates rather than UTC
+  // Create a date-to-mood mapping using local dates consistently
   const entryDates = entries.reduce((acc, entry) => {
+    // Create a date object from the entry date string
     const entryDate = new Date(entry.date);
-    const year = entryDate.getFullYear();
-    const month = String(entryDate.getMonth() + 1).padStart(2, '0');
-    const day = String(entryDate.getDate()).padStart(2, '0');
-    const dateStr = `${year}-${month}-${day}`;
-    acc[dateStr] = entry.mood;
+    
+    // Create a date string using the local date components
+    // Format: YYYY-MM-DD using local time
+    const localYear = entryDate.getFullYear();
+    const localMonth = String(entryDate.getMonth() + 1).padStart(2, '0');
+    const localDay = String(entryDate.getDate()).padStart(2, '0');
+    const localDateStr = `${localYear}-${localMonth}-${localDay}`;
+    
+    acc[localDateStr] = entry.mood;
     return acc;
   }, {});
 
@@ -113,7 +126,7 @@ const CalendarView = ({ entries, onClose }) => {
     for (let day = 1; day <= daysCount; day++) {
       const date = new Date(year, month, day);
       
-      // Use local date string format instead of ISO string
+      // Generate date string in the same format as used for entryDates
       const dateYear = date.getFullYear();
       const dateMonth = String(date.getMonth() + 1).padStart(2, '0');
       const dateDay = String(date.getDate()).padStart(2, '0');
