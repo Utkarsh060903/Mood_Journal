@@ -14,13 +14,6 @@ Mood Journal is a modern web application designed to help users track their emot
 - **Data Export**: Export your journal entries to CSV for external analysis or backup
 - **Responsive Design**: Fully functional on both desktop and mobile devices
 
-## 🖼️ Screenshots
-
-<div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-  <img src="https://ibb.co/qF9kbJgv" alt="Main Dashboard" width="48%">
-  <img src="https://ibb.co/RGQg3mpG" alt="Calendar View" width="48%">
-</div>
-
 ## 🚀 Getting Started
 
 ### Prerequisites
