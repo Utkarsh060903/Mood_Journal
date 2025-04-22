@@ -62,4 +62,4 @@ Mood Journal is a modern web application designed to help users track their emot
 
 Your Name - [utkarsh060903@gmail.com](mailto:utkarsh060903@gmail.com)
 
-Project Link: [https://github.com/yourusername/mood-journal](https://github.com/utkarsh060903/mood-journal)
+Project Link: [https://github.com/utkarsh060903/mood-journal](https://github.com/utkarsh060903/Mood_Journal)
