@@ -1,12 +1,72 @@
-# React + Vite
+# Mood Journal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 Overview
 
-Currently, two official plugins are available:
+Mood Journal is a modern web application designed to help users track their emotional well-being alongside environmental factors like weather. With an intuitive interface, users can record daily moods, add personal notes, and visualize patterns over time through a calendar view.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Daily Mood Tracking**: Select from a range of mood options with expressive emojis
+- **Weather Integration**: Automatic weather data capture using the Tomorrow.io API
+- **Calendar View**: Visualize mood patterns over time with a color-coded calendar
+- **Journaling**: Add personal notes to each mood entry
+- **Dark/Light Mode**: Toggle between themes for comfortable viewing day or night
+- **Data Export**: Export your journal entries to CSV for external analysis or backup
+- **Responsive Design**: Fully functional on both desktop and mobile devices
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖼️ Screenshots
+
+<div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+  <img src="https://ibb.co/qF9kbJgv" alt="Main Dashboard" width="48%">
+  <img src="https://ibb.co/RGQg3mpG" alt="Calendar View" width="48%">
+</div>
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v16.0 or higher)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/utkarsh060903/mood-journal.git
+   cd mood-journal
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Create a `.env` file in the project root with your Tomorrow.io API key:
+   ```
+   VITE_WEATHER_API_KEY=your_api_key_here
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:5173` (or whatever port Vite is running on)
+
+## 🛠️ Technologies Used
+
+- **Frontend Framework**: React.js
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS
+- **Icons**: Lucide React
+- **Weather Data**: Tomorrow.io API
+- **State Management**: React Context API
+- **Storage**: Local Storage (browser-based)
+
+
+## 📧 Contact
+
+Your Name - [utkarsh060903@gmail.com](mailto:utkarsh060903@gmail.com)
+
+Project Link: [https://github.com/yourusername/mood-journal](https://github.com/utkarsh060903/mood-journal)
